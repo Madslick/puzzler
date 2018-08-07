@@ -1,0 +1,15 @@
+// Import angular material sass file
+@import '~@angular/material/theming';
+
+// Import the base angular-material package
+@include mat-core();
+
+// Set themes colors
+$app-theme-primary: mat-palette($mat-blue, 800, 600, 900);
+$app-theme-accent: mat-palette($mat-yellow, A200, A100, A400);
+$app-theme-warn: mat-palette($mat-red);
+
+
+$app-theme: mat-dark-theme($app-theme-primary, $app-theme-accent, $app-theme-warn);
+
+@include angular-material-theme($app-theme);

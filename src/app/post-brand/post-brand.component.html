@@ -1,0 +1,16 @@
+<mat-card class="card-content">
+    <mat-card-title>Post a new Brand!</mat-card-title>
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+            <mat-form-field class="full-width">
+                <input #brandName matInput placeholder="Puzzle Brand" value="">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="10" [rowspan]="1"></mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <button (click)="postBrand()" mat-stroked-button color="accent">Create Brand</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>

@@ -1,0 +1,43 @@
+<mat-card class="card-content">
+    <mat-card-title>Post a new Puzzle!</mat-card-title>
+    <mat-grid-list cols="12" rowHeight="100px">
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+            <mat-form-field class="full-width">
+                <input #puzzleName matInput placeholder="Puzzle Name" value="">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+            <mat-form-field class="full-width">
+                <input #puzzleCount type="number" matInput placeholder="Pieces" value="">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+            <mat-form-field class="full-width">
+                <mat-select #puzzleGenre placeholder="Select">
+                    <mat-option *ngFor="let genre of genres" [value]="genre.name">{{ genre.name }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="12" [rowspan]="1">
+            <mat-form-field class="full-width">
+                <mat-select #puzzleBrand placeholder="Select">
+                    <mat-option *ngFor="let brand of brands" [value]="brand.name">{{ brand.name }}</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="10" [rowspan]="1"></mat-grid-tile>
+
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <button (click)="postPuzzle()" mat-stroked-button color="accent">Create puzzle</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
+
+<app-post-genre></app-post-genre>
+
+<app-post-brand></app-post-brand>
